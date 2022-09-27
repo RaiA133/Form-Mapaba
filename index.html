@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daftar Mapaba</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+  
+    <div class="form-container slide1-form">
+        <div class="form-box slide1-box">
+            <h2>Apa itu Mapaba ?</h2>
+
+            <!-- Arti Singkat Mapaba -->
+            <div class="pengertian">
+                <p><b>Masa Penerimaan Anggota Baru (MAPABA)</b> merupakan proses pertama dalam menyeleksi dan menerima anggota organisasi Pergerakan Mahasiswa Islam Indonesia (PMII).</p>
+            </div><br>
+            <div class="pengertian">
+                <b>Mapaba</b> juga merupakan bentuk kaderisasi formal tingkat basic dan pertama di PMII, sehingga setiap mahasiswa (calon anggota) yang ingin bergabung wajib melewati proses di Mapaba. Calon anggota baru nantinya akan menerima berbagai macam pengetahuan yang akan tersaji dalam materi Mapaba PMII.</p>
+            </div>
+            <div class="sosmed">
+                <p class="tulisan">Kunjungi Sosial Media Kita di...</p>
+                <div class="pilihan-sosmed">
+
+                    <a target="_blank" href="https://www.pmii.id/"><img src="images/PMII.png" alt="PB PMII Web Official" title="PB PMII Web Official"></a>
+
+                    <a target="_blank" href="https://www.instagram.com/pmiiteknik_uninus/"><img src="images/instagram.webp" alt="instagram PMII FTEK uninus" title="Instagram Official PMII FTEK uninus"></a>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- konten penjelasan MAPABA -->
+        <div class="imgBoxPMII slide1-imgBox">
+            <div class="sliding-link">
+                <div class="kotak-hal1">
+                    <p>Ayo Daftar !</p>
+                    <span class="tombol-daftar">Daftar</span>
+                </div>
+            </div>
+            <img src="images/PMII.png" alt="foto">
+        </div> 
+
+    </div>
+
+
+<!-- BEDA HALAMAN -->
+
+
+    <div class="form-container slide2-form">
+        <!-- konten penjelasan MAPABA -->
+        <div class="imgBoxPMII slide2-imgBox">
+            <div class="sliding-link">
+                <div class="kotak-hal2">
+                    <p>Apa itu Mapaba ?</p>
+                    <span class="tombol-penjelasan">Cari tahu</span>
+                </div>
+            </div>
+            <img src="images/Logo Rayon Teknik.png" alt="foto">
+
+        </div> 
+        <!-- FORM PENDAFATARAN -->
+        <div class="form-box slide2-box">
+            <h2>Daftar</h2>
+            <form action="process-form.php" method="post">
+                <div class="field">
+                    <i class="uil uil-user"></i>
+                    <!-- autocomplete="off" untuk menghilangkan save data form html -->
+                    <input type="text" placeholder="Nama Sesuai KTP" name="nama" autocomplete="off" required >
+                </div>
+                <div class="field">
+                    <i class="uil uil-book-open"></i>
+                    <input type="text" placeholder="Program Studi" name="prodi" id="prodi" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-balance-scale"></i>
+                    <input type="text" placeholder="Fakultas" name="fakultas" id="fakultas" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-book-reader"></i>
+                    <input type="text" placeholder="Semester" name="semester" id="semester" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-palette"></i>
+                    <input type="text" placeholder="Hobi" name="hobi" id="hobi" autocomplete="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-at"></i>
+                    <input type="email" placeholder="Email@example.com" name="email" id="email" autosave="off">
+                </div>
+                <div class="field">
+                    <i class="uil uil-whatsapp"></i>
+                    <input type="text" placeholder="Nomor Whatsapp" name="no-wa" id="no-wa">
+                </div>
+                <div class="field">
+                    <i class="uil uil-home"></i>
+                    <input type="text" placeholder="Alamat Sesuai KTP" name="alamat" id="alamat">
+                </div>
+                <div class="field">
+                    <textarea placeholder="Alamat Saat Ini" name="domisili" id="domisili" cols="24" rows="4" autocomplete="off"></textarea>
+                </div>
+                <div class="field2">
+                    <i class="uil uil-map-marker"></i>
+                    <select id="kota" name="kota">
+                        <option value="0">Kota</option>
+                        <option value="1">Bandung Kota</option>
+                        <option value="2">Kab. Bandung</option>
+                        <option value="3">Luar Bandung</option>
+                    </select>
+                </div>
+                <div class="field2">
+                    <i class="uil uil-calendar-alt"></i>
+                    <input type="date" placeholder="Tanggal Lahir" name="tgl-lahir" id="tgl-lahir">
+                </div>
+                <div class="gender">
+                    <input type="radio" name="gender" id="gender" value="1"><label for="gender">Pria</label>
+                    <input type="radio" name="gender" id="gender" value="2"><label for="gender">Wanita</label>
+                </div>
+                <input class="tombol-submit" type="submit" value="Kirim">
+            </form>
+            
+        </div>
+    </div>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+        //input field focus effect
+        const textInput = document.querySelectorAll("input");
+
+        textInput.forEach(textInput => {
+
+            //ketika input di klik maka akan mengaktifkan field script
+            textInput.addEventListener("focus", () => {
+                let parent = textInput.parentNode;
+                parent.classList.add("active");
+            });
+
+            //mematikan field script ketika klik field yang lain
+            textInput.addEventListener("blur", () => {
+                let parent = textInput.parentNode;
+                parent.classList.remove("active");
+            });
+        });
+
+
+
+        //perpindahan halaman1 & halaman2
+        const tombolkeHal2 = document.querySelector(".kotak-hal1"); // ".tombol-daftar",
+        const tombolkeHal1 = document.querySelector(".kotak-hal2"); // ".tombol-penjelasan",
+        const pindahkeHal2 = document.querySelector(".slide2-form");
+        const pindahkeHal1 = document.querySelector(".slide1-form");
+         
+        //penambahan "hide" & "show", jika muncul di inspect maka berhasil
+        //fungsi tampilkan dan hilangkan konten ketika di klik lalu pindah ke slide 2
+        tombolkeHal2.addEventListener("click", () => {
+            pindahkeHal1.classList.add("hide");
+            pindahkeHal2.classList.add("show");
+            pindahkeHal1.classList.remove("show");
+            pindahkeHal2.classList.remove("hide");
+
+        });
+        
+        //fungsi tampilkan dan hilangkan konten ketika di klik lalu pindah ke slide 1
+        tombolkeHal1.addEventListener("click", () => {
+            pindahkeHal1.classList.remove("hide");
+            pindahkeHal2.classList.remove("show");
+            pindahkeHal1.classList.add("show");
+            pindahkeHal2.classList.add("hide");
+
+        });
+    </script>
+</body>
+<!-- <footer>
+    <div class="kopikanan">
+        <p>copyright &copy;2022 Raie Aswajjillah</p>
+    </div>
+</footer> -->
+</html>

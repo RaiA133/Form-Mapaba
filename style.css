@@ -1,0 +1,338 @@
+/* import tulisan jenis poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/* lanjut : https://www.youtube.com/watch?v=fqJqs9s76Js (menit 36.22) */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: rgb(250, 250, 250);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10cm;
+    padding-bottom: 1cm;
+    align-items: center;   /* ini untuk menengahkan konten secara vertical */
+    font-size: 1rem;
+    position: absolute;  /* geser posisi konten jadi di belakang form */
+}
+
+/* bayangan kotak */
+.form-box {
+    z-index: 999;
+    background: #fff;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+    width: 375px;
+    padding: 50px 40px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* css judul */
+.form-box h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* garis bawah di setiap input */
+.form-box .field{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 25px;
+}
+/* JS : garis bawah jadi biru ketika di klik */
+.form-box .field.active {
+    border-bottom: 2px solid #0065ff;
+    transition: 0.6s ease;
+}
+
+/* hilangkan outline input & penempatan tulisan */
+.form-box .field input, textarea , .form-box .field2 input, date, select  {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    font-size: 1em;
+    padding-bottom: 5px;
+}
+
+/* icon css */
+.form-box .field i , .form-box .field2 i {
+    color: #828da0;
+    font-size: 1.3em;
+    margin-right: 10px;
+    padding-bottom: 5px;
+}
+
+/* JS : icon jadi biru ketika di klik */
+.form-box .field.active i {
+    color: #0065ff;
+    transition: 0.3s ease;
+
+}
+
+/* warna dan ukuran placeholder */
+::placeholder {
+    color: #828da0;
+    font-size: 0.85em;
+}
+
+.form-box .field2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.field2 select, .gender input{
+    cursor: pointer;
+}
+
+input[type="date"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+  }
+  input[type="date"]:focus:before,
+  input[type="date"]:valid:before {
+    content: "";
+  }
+
+input[type="radio"]{
+    justify-content: center;
+    margin: 10px 15px 25px 35px;
+}
+
+/* tombol kirim */
+.tombol-submit {
+    background: #0065ff;
+    color: #fff;
+    border: none;
+    outline: none;
+    width: 120px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-size: 0.85em;
+    font-weight: 500;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.tombol-submit:hover{
+    background: gold;
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+
+/* SOSIAL MEDIA PMII */
+.sosmed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sosmed .tulisan {
+    color: #828da0;
+    font-size: 0.65em;
+    margin: 25px 0;
+}
+
+.pilihan-sosmed {
+    display: flex;
+}
+
+/* kotak pada 'pilihan sosmed' */
+.pilihan-sosmed a {
+    border: 1px solid #ccc;
+    padding: 11px 32px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    transition: border 0.3s ease;
+}
+/* garis kotak 'pilihan sosmed' jadi biru */
+.pilihan-sosmed a:hover{
+    border: 1px solid #0065ff;
+}
+
+
+.pilihan-sosmed a img, i {
+    width: 20px;
+}
+
+/* kotak pada tombol 'Daftar' */
+.sliding-link div{
+    border: 1px solid #0065ff;
+    padding: 11px 32px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    transition: border 0.3s ease;
+    cursor: pointer;
+}
+/* garis kotak tombol 'Daftar & cari tahu' jadi kuning */
+.tombol-daftar:hover , .tombol-penjelasan:hover{
+    color: gold;
+    transition: 0.5s ease;
+}
+/* tulisan "Daftar & cari tahu" jadi kuning */
+.sliding-link div:hover{
+    border: 1px solid gold;
+}
+
+
+/* konten penjelasan */
+.imgBoxPMII img {
+    max-width: 270px;
+}
+
+.sliding-link {
+    display: flex;
+    font-size: 0.8em;
+    margin-bottom: 25px;
+}
+
+.sliding-link span {
+    color: #0065ff;
+    font-weight: 600;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.imgBoxPMII{
+    border-radius: 10px;
+    z-index: 888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #fff;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 20%);
+    height: 400px;
+    padding: 15px 35px;
+}
+
+
+/* sembunyikan halaman2 */
+/* .slide1-form {
+    display: none;
+} */ /* di hilangkan karena position : absolute; di .form-container */
+
+.slide1-imgBox {
+    border-radius: 0 10px 40px 0;
+}
+.slide2-imgBox {
+    border-radius: 40px 0 0 10px;
+}
+
+
+/* menghilangkan seluruh konten jika klik daftar */
+.slide1-form.hide .slide1-box {
+    transform:  translateX(100%);
+    visibility: hidden;
+    
+}
+.slide1-form.hide .slide1-imgBox {
+    transform: translateX(-100%);
+    visibility: hidden;
+}
+/* animasi slide ke slide1 */
+.slide1-form.show .slide1-box,
+.slide1-form.show .slide1-imgBox{
+    transform: translateX(0);
+    visibility: visible;
+    transition: 0.5s ease; /* kecepatan sliding */
+}
+
+/* menghilangkan seluruh konten jika klik cari tahu */
+.slide2-form .slide2-imgBox {
+    transform:  translateX(100%);
+    visibility: hidden;
+}
+.slide2-form .slide2-box {
+    transform: translateX(-100%);
+    visibility: hidden;
+}
+
+/* animasi slide ke slide2 */
+.slide2-form.show .slide2-imgBox,
+.slide2-form.show .slide2-box {
+    transform: translateX(0);
+    visibility: visible;
+    transition: 0.5s ease; /* kecepatan sliding */
+}
+
+
+/* RESFONSIVE WEBSITE */
+@media screen and (max-width: 735px){
+    .form-container {
+        display: flex;
+        justify-content: center;
+        padding-top: 13cm;
+        padding-bottom: 1cm;
+        align-items: center;
+        font-size: 1rem;
+        position: absolute;
+        flex-direction: column;
+        top: 0;
+        overflow: hidden;
+        padding: 0px;
+    }
+    .form-box {
+        box-shadow: none;
+        padding: 30px 70px;
+    }
+    .imgBoxPMII img {
+        max-width: 45%;
+        min-width: 180px;
+    }
+    .imgBoxPMII {
+        box-shadow: none;
+        width: 100%;
+        height: auto;
+        padding: 35px 35px 15px;
+    }
+    .sosmed .tulisan {
+        margin: 40px 0px 15px 0px;
+    }
+    .pengertian {
+        font-size: 14px;
+    }
+
+    /* membalik foto di slide2 menjadi dibawah form */
+    /* .slide2-form{
+        flex-direction: column-reverse;
+    } */
+}
+
+@media screen and (max-width: 450px){
+    .form-container{
+        font-size: 0.9rem;
+    }
+}
+
+/* .kopikanan{
+    border: 1px solid black;
+    flex-direction: column;
+    display: flex;
+    bottom: 0;
+} */
